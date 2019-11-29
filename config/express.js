@@ -6,11 +6,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override')
 const path = require('path');
 
-// async function pegarAluno(){
-//     return await controller.listaAlunos();
-// }
-
- module.exports = function() {
+module.exports = function() {
     var app = express();
     app.set("port", 3000);
     app.set("views", "views");
@@ -22,12 +18,12 @@ const path = require('path');
     alunosRouter(app);
     app.get('*', (req, res) => {
         Aluno.find({})
-            .then(alunos => {
+            .then(users => {
                 var dados = {
                     metodo :'POST',
                     acao : '',
                 }
-                const alunoSelecionado = {
+                const userSelecionado = {
                     matricula : '',
                     nome : '',
                     dataNasc : '',
@@ -38,9 +34,9 @@ const path = require('path');
                     campus : '',
                     curso : ''
                 }
-                res.render('index',{alunos,dados,alunoSelecionado});
+                res.render('index',{users,dados,userSelecionado});
             })
             .catch(err => console.log(err));
     });
     return app;
- };
+};

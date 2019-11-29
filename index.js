@@ -1,5 +1,5 @@
 const http = require('http');
-const mongoConnect = require('./util/database').mongoConnect;
+const mongoConnect = require('./util/athena').mongoConnect;
 var app = require('./config/express')();
 
 //mongoConnect(()=>{

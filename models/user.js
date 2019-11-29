@@ -2,23 +2,25 @@
 // const getDB = require('../util/database').getDB;
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/database', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017/athena', {useNewUrlParser: true});
 mongoose.set('useFindAndModify', false);
 
 const Schema = mongoose.Schema;
 
-const AlunoSchema = new Schema(
+const UserSchema = new Schema(
     {
-        matricula : {type : Number},
         nome : String,
         dataNasc : Date,
         email : String,
         DDD : Number,
         telefone : Number,
         operadora : String,
-        campus : String,
-        curso : String
+        curso : String,
+        disciplinas : {
+            type: [Schema.Types.ObjectId],
+            ref: 'Disciplina'
+        }
     }
 );
 
-module.exports = mongoose.model('Aluno', AlunoSchema);
+module.exports = mongoose.model('User', UserSchema);
