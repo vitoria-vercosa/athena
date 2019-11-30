@@ -53,40 +53,40 @@
         </div>
     
 
-      <div class="card">
+      <div class="card container" style="width: 400px; padding: 0%;">
 
             <div class="card-header container" style="background-color: rgb(32, 93, 185); color: white"  >
               <strong>Login</strong>
             </div> <!--close card-header-->
 
-            <div class="card-body container">
-                <!--<form id="form_aluno"  onsubmit="event.preventDefault(); adicionarAluno();">-->  
-                <form id="form_aluno" action="/api/alunos/<%=dados.acao%>" method="POST">
+            <div class="card-body container" style="padding: 0%; margin:0%">
+                <!--<form id="form_aluno" action="/api/alunos/<%=dados.acao%>" onsubmit="event.preventDefault(); adicionarAluno();">-->  
+                <form id="form_aluno" method="POST" style="margin-top: 10px;">
 
-                  <div class="form-row">
+                  <div class="form-row container">
 
-                      <div class="form-group col-md-5">
+                      <div class="form-group col-md-12" >
                           <label for="email"><strong>Email</strong></label>
                           <input type="email" class="form-control" id="email" name="email" required>
                       </div>
 
                   </div><!--close row-->
 
-                  <div class="form-row">
+                  <div class="form-row container">
                       
-                      <div class="form-group col-md-5">
-
+                      <div class="form-group col-md-12">
                           <label for="inputEmail"><strong>Senha</strong></label>
                           <input type="password" class="form-control" id="senha" name="senha" required>
-
+                          <a href="api/campus">Esqueci a senha</a>
                       </div>
 
                   </div><!--close row-->
 
-                  <div class="card-footer" style="background-color: rgb(240, 240, 240); color: white"  >
-                      <a href="api/campus">Esqueci a senha</a>
-                      <button type="submit" class="btn btn-light" value="Confirmar">Entrar</button>
-                      <button type="reset" class="btn btn-light" value="Limpar">Limpar</button>
+                  <div class="card-footer container" style="background-color: rgb(240, 240, 240); color: white; margin: 0%;"  >
+                      
+                      <button type="submit" class="btn btn-light" value="Confirmar">Entrar</button> <br>
+                      <a href="api/campus">Criar uma conta</a>
+                      <!--<button type="reset" class="btn btn-light" value="Limpar">Limpar</button>-->
                       <!--<input type="submit" class="btn float-right btn-light" value="Inserir Linha" onclick="processar('tableAluno')">-->
                       
                   </div><!--close card-footer -->
