@@ -13,7 +13,7 @@ module.exports = function() {
     app.set("view engine", "ejs");
     app.use(bodyParser.json());       
     app.use(bodyParser.urlencoded({extended:true}));
-    app.use(express.static('./public'));
+    app.use(express.static('./view'));
     app.use(methodOverride('_method'));
     alunosRouter(app);
     app.get('*', (req, res) => {
@@ -34,7 +34,7 @@ module.exports = function() {
                     campus : '',
                     curso : ''
                 }
-                res.render('index',{users,dados,userSelecionado});
+                res.render('login',{users,dados,userSelecionado});
             })
             .catch(err => console.log(err));
     });

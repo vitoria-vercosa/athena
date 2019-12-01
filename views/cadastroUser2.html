@@ -13,6 +13,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="../public/css/carousel-semana.css" >
+    <script src="../public/js/carousel-semana.js"></script>
+
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="../public/js/jquery-1.11.1.min.js"></script>
+    
     <title>Cadastro Passo 2</title>
   </head>
   <body>
@@ -65,68 +73,133 @@
 
 
 
-                    <div class="form-row container" >
-
-                        <label for="inputNome"><strong>Quantas horas livres voce tem ?</strong></label>
-
-
-                        <!--  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">  -->
-                        <div id="carouselExampleIndicators" class="carousel slide container" >
-                            $('.carousel').carousel({wrap: false});
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-                            </ol>
-
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <!--<img class="d-block w-100" src="../public/img/autora.jpg" alt="Primeiro Slide">-->
-                                    <label>Segunda</label>
-                                    <input type="number" placeholder="segunda">
-                                </div>
-                                <div class="carousel-item">
-                                    <label>Terca</label>
-                                    <input type="number" placeholder="terca">
-                                    </div>
-                                <div class="carousel-item">
-                                    <label>Quarta</label>
-                                    <input type="number" placeholder="quarta">
-                                </div>
-                                <div class="carousel-item">
-                                    <label>Quinta</label>
-                                    <input type="number" placeholder="quinta">
-                                </div>
-                                <div class="carousel-item">
-                                    <label>Sexta</label>
-                                    <input type="number" placeholder="sexta">
-                                </div>
-                                <div class="carousel-item">
-                                    <label>Sabado</label>
-                                    <input type="number" placeholder="sabado">
-                                </div>
-                                <div class="carousel-item">
-                                    <label>Domingo</label>
-                                    <input type="number" placeholder="domingo">
-                                </div>
-                            </div>
-
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
-                                <span class="sr-only">Anterior</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
-                                <span class="sr-only">Próximo</span>
-                            </a>
+                    <div class="form-row" ><!--<div class="form-row row " > -->
+                        <div class="col-sm-10">
+                                <label for="inputNome"><strong>Quantas horas livres voce tem ?</strong></label>
 
                         </div>
+                        <br>
+                        <div class="col-sm-10">
+                            <div class="card" style="width: 50px;border: none;">                            
+                                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+                                    <span class="sr-only">Anterior</span>
+                                </a>
+                            </div>
 
+                            <div class="card">
+                                    <div id="carouselExampleIndicators" class="carousel slide container" data-interval="0">
 
+                                            <ol class="carousel-indicators">
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+                                            </ol>
+                
+                                            <div class="carousel-inner" style="border: none;">
+                                                <div class="carousel-item active" >
+                                                    <!--<img class="d-block w-100" src="../public/img/autora.jpg" alt="Primeiro Slide">-->
+                                                    <label>Segunda</label>
+                                                    <input type="number"  class="form-control"placeholder="segunda">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <label>Terca</label>
+                                                    <input type="number"  class="form-control" placeholder="terca">
+                                                    </div>
+                                                <div class="carousel-item">
+                                                    <label>Quarta</label>
+                                                    <input type="number"  class="form-control" placeholder="quarta">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <label>Quinta</label>
+                                                    <input type="number"  class="form-control" placeholder="quinta">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <label>Sexta</label>
+                                                    <input type="number"  class="form-control" placeholder="sexta">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <label>Sabado</label>
+                                                    <input type="number"  class="form-control" placeholder="sabado">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <label>Domingo</label>
+                                                    <input type="number"  class="form-control" placeholder="domingo">
+                                                </div>
+                                            </div>
+                
+                
+                
+                
+                                        </div> 
+                            </div>
+
+                            <div class="card" style="width: 50px;border: none;">
+                                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+                                    <span class="sr-only">Próximo</span>
+                                </a>
+                            </div>
+
+                        </div> </p>
+
+                        <!--  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">  -->
+                        
+
+<!--
+                        <div class='row'>
+                                <div class='col-md-8'>
+                                  <div class="carousel slide media-carousel" id="media">
+                                    <div class="carousel-inner">
+                                      <div class="item  active">
+                                        <div class="row">
+                                          <div class="col-md-4">
+                                            <a class="thumbnail" href="#"><input type="number"  class="form-control" placeholder="sabado"></a>
+                                          </div>          
+                                          <div class="col-md-4">
+                                            <a class="thumbnail" href="#"><input type="number"  class="form-control" placeholder="sabado"></a>
+                                          </div>
+                                          <div class="col-md-4">
+                                            <a class="thumbnail" href="#"><input type="number"  class="form-control" placeholder="sabado"></a>
+                                          </div>        
+                                        </div>
+                                      </div>
+                                      <div class="item">
+                                        <div class="row">
+                                          <div class="col-md-4">
+                                            <a class="thumbnail" href="#"><input type="number"  class="form-control" placeholder="sabado"></a>
+                                          </div>          
+                                          <div class="col-md-4">
+                                            <a class="thumbnail" href="#"><input type="number"  class="form-control" placeholder="sabado"></a>
+                                          </div>
+                                          <div class="col-md-4">
+                                            <a class="thumbnail" href="#"><input type="number"  class="form-control" placeholder="sabado"></a>
+                                          </div>        
+                                        </div>
+                                      </div>
+                                      <div class="item">
+                                        <div class="row">
+                                          <div class="col-md-4">
+                                            <a class="thumbnail" href="#"><input type="number"  class="form-control" placeholder="sabado"></a>
+                                          </div>          
+                                          <div class="col-md-4">
+                                            <a class="thumbnail" href="#"><input type="number"  class="form-control" placeholder="sabado"></a>
+                                          </div>
+                                          <div class="col-md-4">
+                                            <a class="thumbnail" href="#"><input type="number"  class="form-control" placeholder="sabado"></a>
+                                          </div>      
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
+                                    <a data-slide="next" href="#media" class="right carousel-control">›</a>
+                                  </div>                          
+                                </div>
+                              </div>-->
 
                 </div><!--close row-->
 
@@ -154,5 +227,8 @@
     </div>
 
     <script src="js/aluno.js"></script>
+    <script>
+        $('.carousel').carousel({wrap: false});
+    </script>
   </body>
 </html>

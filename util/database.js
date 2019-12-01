@@ -8,7 +8,7 @@ const mongoConnect = callback => {
     .then(client => {
         console.log("Mongo connected");
         
-        _db = client.db("database");
+        _db = client.db("athena");
         callback(_db);
     })
     .catch(err => {
