@@ -1,6 +1,5 @@
 const User = require("../models/User")
 const service = require("./serviceTable")
-const Campus = require("../models/campus")
 
 module.exports = {
 

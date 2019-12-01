@@ -35,7 +35,7 @@ module.exports={
         })
         .catch(err => {
             console.log(err);
-            res.status(404).send("Disciplina não encontrada");
+            res.status(404).send("Estudo não encontrado");
         });
     },
 
@@ -58,7 +58,7 @@ module.exports={
         })
         .catch(err => {
             console.log(err);
-            res.status(404).send("Disciplina não encontrada");
+            res.status(404).send("Estudo não encontrado");
         });
     
     },
@@ -70,7 +70,7 @@ module.exports={
         })
         .catch(err => {
             console.log(err);
-            res.status(404).send("Estudo não encontrada");
+            res.status(404).send("Estudo não encontrado");
         });
     }//, 
 

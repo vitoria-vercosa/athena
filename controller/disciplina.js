@@ -1,12 +1,11 @@
 const Disciplina = require("../models/disciplina")
-//const service = require("./serviceTable")
 
 module.exports={
 
     async listaDisciplina(req, res){
         Disciplina.find({})
-        .then(Disciplina => {
-            res.json(Disciplina);
+        .then(disciplina => {
+            res.json(disciplina);
         })
         .catch(err => console.log(err));
     },
@@ -22,7 +21,7 @@ module.exports={
 
         const disciplinaFilt = await Disciplina.find(filter);
 
-        if(DisciplinaFilt.length == 0){
+        if(disciplinaFilt.length == 0){
             return res.err("Nao há Disciplina com esse nome");
         }
     },
@@ -73,32 +72,5 @@ module.exports={
             console.log(err);
             res.status(404).send("Disciplina não encontrada");
         });
-    }//, 
-
-//    async checkDisciplinaCurso(Disciplina, curso){
-//        console.log('so mais um teste');
-//        console.log(Disciplina);
-//        console.log(curso);
-//        var filter = {};
-
-//        if(Disciplina && curso){
-//            filter.nome = Disciplina;
-//            filter.curso = curso;
-//        }
-
-//        console.log(filter); 
-
-//        const DisciplinaRetornados = /*await*/ Disciplina.find(filter);
-//        console.log(DisciplinaRetornados);
-
-//        if(DisciplinaRetornados.length == 0){
-//            return false;
-//            //return ("Não existe esse campus ou esse curso");
-//        }
-    
-//    },
-
-//    showForm(req, res){
-//        res.render("../public/cadastroDisciplina.ejs");
-//    }
+    }
 }
