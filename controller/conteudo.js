@@ -53,7 +53,7 @@ module.exports={
     async atualizarConteudo(req, res){
 
         Conteudo.findByIdAndUpdate(req.params.id, {$set:{nome:req.body.nome, 
-            curso:req.body.curso}},{new:true})
+            nivel:req.body.nivel}},{new:true})
         .then(old_conteudo => {
                 res.send(old_conteudo)        
         })

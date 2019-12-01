@@ -15,7 +15,6 @@ const UserSchema = new Schema(
         DDD : Number,
         telefone : Number,
         operadora : String,
-        curso : String,
         disciplinas : {
             type: [Schema.Types.ObjectId],
             ref: 'Disciplina'

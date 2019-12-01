@@ -7,27 +7,23 @@ mongoose.set('useFindAndModify', false);
 
 const Schema = mongoose.Schema;
 
-const EstudoSchema = new Schema(
+const RevisaoSchema = new Schema(
     {
-        tempo: {
-            type: String,
-            required: true
-        },
         conteudo: {
-            type: [Schema.Types.ObjectId],
-            ref: 'Conteudo',
+            type: Schema.Types.ObjectId,
+            ref:'Conteudo',
             required: true
         },
-        user: {
-            type : Schema.Types.ObjectId,
-            ref:'User',
+        tempoPrevisto: {
+            type: Number,
             required: true
         },
-        data: {
-            type: Date,
+        tempoRevisado: Number,
+        status:{
+            type: String,
             required: true
         }
     }
 );
 
-module.exports = mongoose.model('Disciplina', DisciplinaSchema);
+module.exports = mongoose.model('Conteudo', ConteudoSchema);

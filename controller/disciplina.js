@@ -1,4 +1,4 @@
-const Campus = require("../models/disciplina")
+const Disciplina = require("../models/disciplina")
 //const service = require("./serviceTable")
 
 module.exports={
@@ -13,14 +13,14 @@ module.exports={
 
     async DisciplinaByName(req, res){
 
-        const Disciplina = req.query;
+        const disciplina = req.query;
         var filter={}
 
-        if(Disciplina){
-            filter.Disciplina = Disciplina;
+        if(disciplina){
+            filter.disciplina = disciplina;
         }
 
-        const DisciplinaFilt = await Disciplina.find(filter);
+        const disciplinaFilt = await Disciplina.find(filter);
 
         if(DisciplinaFilt.length == 0){
             return res.err("Nao há Disciplina com esse nome");
@@ -30,17 +30,17 @@ module.exports={
     async obterDisciplina(req, res){
         var id = req.params.id;    
         Disciplina.findById(id)
-        .then(Disciplina => {
-            res.status(200).send(Disciplina)
+        .then(disciplina => {
+            res.status(200).send(disciplina)
         })
         .catch(err => {
             console.log(err);
-            res.status(404).send("Disciplina não encontrado");
+            res.status(404).send("Disciplina não encontrada");
         });
     },
 
     async inserirDisciplina(req, res){
-        const Disciplina = new Disciplina(req.body);
+        const disciplina = new Disciplina(req.body);
         Disciplina
         .save()
         .then(res.status(200))
@@ -53,52 +53,52 @@ module.exports={
     async atualizarDisciplina(req, res){
 
         Disciplina.findByIdAndUpdate(req.params.id, {$set:{nome:req.body.nome, 
-            curso:req.body.curso}},{new:true})
-        .then(old_Disciplina => {
-                res.send(old_Disciplina)        
+            conteudo:req.body.curso}},{new:true})
+        .then(old_disciplina => {
+                res.send(old_disciplina)        
         })
         .catch(err => {
             console.log(err);
-            res.status(404).send("Disciplina não encontrado");
+            res.status(404).send("Disciplina não encontrada");
         });
     
     },
 
     async removerDisciplina(req, res){
         Disciplina.findByIdAndRemove({_id:req.params.id})
-        .then(old_Disciplina => {
-                res.send(old_Disciplina)
+        .then(old_disciplina => {
+                res.send(old_disciplina)
         })
         .catch(err => {
             console.log(err);
-            res.status(404).send("Disciplina não encontrado");
+            res.status(404).send("Disciplina não encontrada");
         });
-    }, 
+    }//, 
 
-    async checkDisciplinaCurso(Disciplina, curso){
-        console.log('so mais um teste');
-        console.log(Disciplina);
-        console.log(curso);
-        var filter = {};
+//    async checkDisciplinaCurso(Disciplina, curso){
+//        console.log('so mais um teste');
+//        console.log(Disciplina);
+//        console.log(curso);
+//        var filter = {};
 
-        if(Disciplina && curso){
-            filter.nome = Disciplina;
-            filter.curso = curso;
-        }
+//        if(Disciplina && curso){
+//            filter.nome = Disciplina;
+//            filter.curso = curso;
+//        }
 
-        console.log(filter); 
+//        console.log(filter); 
 
-        const DisciplinaRetornados = /*await*/ Disciplina.find(filter);
-        console.log(DisciplinaRetornados);
+//        const DisciplinaRetornados = /*await*/ Disciplina.find(filter);
+//        console.log(DisciplinaRetornados);
 
-        if(DisciplinaRetornados.length == 0){
-            return false;
-            //return ("Não existe esse campus ou esse curso");
-        }
+//        if(DisciplinaRetornados.length == 0){
+//            return false;
+//            //return ("Não existe esse campus ou esse curso");
+//        }
     
-    },
+//    },
 
-    showForm(req, res){
-        res.render("../public/cadastroDisciplina.ejs");
-    }
+//    showForm(req, res){
+//        res.render("../public/cadastroDisciplina.ejs");
+//    }
 }

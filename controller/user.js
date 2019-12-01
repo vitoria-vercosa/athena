@@ -26,7 +26,7 @@ module.exports = {
 
     async inserirUser(req, res) {
 
-        const { matricula, nome, dataNasc, email, DDD, telefone, operadora, campus, curso } = req.body;
+        const { nome, dataNasc, email, DDD, telefone, operadora, disciplinas } = req.body;
 
         const campusExiste = await Campus.find()
         console.log(campusExiste)
@@ -37,15 +37,13 @@ module.exports = {
             return res.send("fudeu")
         } else {
             const user = await User.create({
-                matricula,
                 nome,
                 dataNasc,
                 email,
                 DDD,
                 telefone,
                 operadora,
-                campus,
-                curso
+                disciplinas
             })
             res.send('index');
 
@@ -54,24 +52,21 @@ module.exports = {
 
     async atualizarUser(req, res) {
 
-        const { matricula } = req.params;
-        const { nome, dataNasc, email, DDD, telefone, operadora, campus, curso } = req.body;
+        const { _id } = req.params;
+        const { nome, dataNasc, email, DDD, telefone, operadora } = req.body;
 
-        if (await !User.find({ matricula })) {
+        if (await !User.find({ _id })) {
             return res.send("Esse user não existe");
         }
 
             User.findByIdAndUpdate(req.params.id, {
                 $set: {
-                    matricula: req.body.matricula,
                     nome: nome,
                     dataNasc: dataNasc,
                     email: email,
                     DDD: DDD,
                     telefone: telefone,
-                    operadora: operadora,
-                    campus: campus,
-                    curso: curso
+                    operadora: operadora
                 }
             }, { new: true })
                 .then(old_user => {
@@ -85,8 +80,8 @@ module.exports = {
 
     async removerUser(req, res) {
 
-        const { matricula } = req.params;
-        const userSelecionado = await User.find({ matricula });
+        const { _id } = req.params;
+        const userSelecionado = await User.find({ _id });
 
         if (!userSelecionado) {
             return res.err("Esse user não existe");
@@ -95,7 +90,7 @@ module.exports = {
         userSelecionado.remove();
         return res.send(userSelecionado);
 
-    },
+    }/*,
     async preencherCampos(req, res) {
         var matriculaGet = req.query.matricula;
         console.log(matriculaGet);
@@ -114,5 +109,5 @@ module.exports = {
                     res.render('index',{user,dados,userSelecionado});
                 })
                 .catch(err => console.log(err));
-        }
+        }*/
 }
