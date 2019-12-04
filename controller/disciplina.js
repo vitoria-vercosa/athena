@@ -10,7 +10,7 @@ module.exports={
         .catch(err => console.log(err));
     },
 
-    async DisciplinaByName(req, res){
+    async disciplinaByName(req, res){
 
         const disciplina = req.query;
         var filter={}

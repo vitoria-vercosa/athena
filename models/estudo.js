@@ -9,9 +9,11 @@ const Schema = mongoose.Schema;
 
 const EstudoSchema = new Schema(
     {
-        tempo: {
-            type: String,
-            required: true
+        
+        tempoEstudado: {
+            horas : Number,
+            min : Number,
+            seg : Number
         },
         conteudo: {
             type: [Schema.Types.ObjectId],

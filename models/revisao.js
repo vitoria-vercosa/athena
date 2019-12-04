@@ -15,10 +15,15 @@ const RevisaoSchema = new Schema(
             required: true
         },
         tempoPrevisto: {
-            type: Number,
-            required: true
+            horas : Number,
+            min : Number,
+            seg : Number
         },
-        tempoRevisado: Number,
+        tempoRevisao: {
+            horas : Number,
+            min : Number,
+            seg : Number
+        },
         status:{
             type: String,
             required: true
