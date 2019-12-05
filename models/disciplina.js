@@ -15,8 +15,7 @@ const DisciplinaSchema = new Schema(
         },
         conteudo: {
             type: [Schema.Types.ObjectId],
-            ref: 'Conteudo',
-            required: true
+            ref: 'Conteudo'
         }
     }
 );

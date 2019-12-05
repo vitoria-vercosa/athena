@@ -10,6 +10,7 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema(
     {
         nome : String,
+        nickname : String,
         dataNasc : Date,
         email : String,
         DDD : Number,
@@ -18,6 +19,15 @@ const UserSchema = new Schema(
         disciplinas : {
             type: [Schema.Types.ObjectId],
             ref: 'Disciplina'
+        },
+        horarios: {
+            segunda: Number,
+            terca: Number,
+            quarta: Number,
+            quinta: Number,
+            sexta : Number,
+            sabado: Number,
+            domingo : Number
         }
     }
 );

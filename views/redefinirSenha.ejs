@@ -8,12 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../public/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../public/css/cadastro.css">
-    <title>Hello, world!</title>
   </head>
   <body>
     <!--<h1>Hello, world!</h1> -->
@@ -22,7 +21,7 @@
 
         <div class="row">
             <h1>Sistema de Controle de Alunos</h1>
-            <img id="ajuda" data-toggle="modal" data-target="#modalAutora" src="../public/img/ajuda.jpg"  style="width: 40px; height: 40px; margin-left: 20px;" >
+            <img id="ajuda" data-toggle="modal" data-target="#modalAutora" src="/img/ajuda.jpg"  style="width: 40px; height: 40px; margin-left: 20px;" >
         </div>
       
         <div class="modal fade" id="modalAutora">
@@ -56,11 +55,10 @@
       <div class="card container" style="width: 400px; padding: 0%;">
 
             <div class="card-header container" style="background-color: rgb(32, 93, 185); color: white"  >
-              <strong>Login</strong>
+              <strong>Redefinir Senha</strong>
             </div> <!--close card-header-->
 
             <div class="card-body container" style="padding: 0%; margin:0%">
-                <!--<form id="form_aluno" action="/api/alunos/<%=dados.acao%>" onsubmit="event.preventDefault(); adicionarAluno();">-->  
                 <form id="form_aluno" method="POST" style="margin-top: 10px;">
 
                   <div class="form-row container">
@@ -75,17 +73,15 @@
                   <div class="form-row container">
                       
                       <div class="form-group col-md-12">
-                          <label for="inputEmail"><strong>Senha</strong></label>
+                          <label for="inputEmail"><strong>Nova Senha</strong></label>
                           <input type="password" class="form-control" id="senha" name="senha" required>
-                          <a href="api/campus">Esqueci a senha</a>
                       </div>
 
                   </div><!--close row-->
 
                   <div class="card-footer container" style="background-color: rgb(240, 240, 240); color: white; margin: 0%;"  >
                       
-                      <button type="submit" class="btn btn-light" value="Confirmar">Entrar</button> <br>
-                      <a href="api/campus">Criar uma conta</a>
+                      <button type="submit" class="btn btn-light" value="Confirmar">Redefinir</button> <br>
                       <!--<button type="reset" class="btn btn-light" value="Limpar">Limpar</button>-->
                       <!--<input type="submit" class="btn float-right btn-light" value="Inserir Linha" onclick="processar('tableAluno')">-->
                       

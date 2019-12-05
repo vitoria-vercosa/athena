@@ -1,10 +1,11 @@
 const express = require('express');
 const controller = require('../controller/user.js');
-const Aluno = require("../models/user")
-const alunosRouter = require('../route/rotas.js');
+const User = require("../models/user_model.js")
+const Router = require('../route/rotas.js');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override')
-const path = require('path');
+const path = require('path')
+
 
 module.exports = function() {
     var app = express();
@@ -15,28 +16,13 @@ module.exports = function() {
     app.use(bodyParser.urlencoded({extended:true}));
     app.use(express.static('./view'));
     app.use(methodOverride('_method'));
-    alunosRouter(app);
-    app.get('*', (req, res) => {
-        Aluno.find({})
-            .then(users => {
-                var dados = {
-                    metodo :'POST',
-                    acao : '',
-                }
-                const userSelecionado = {
-                    matricula : '',
-                    nome : '',
-                    dataNasc : '',
-                    email : '',
-                    DDD : '',
-                    telefone : '',
-                    operadora : '',
-                    campus : '',
-                    curso : ''
-                }
-                res.render('login',{users,dados,userSelecionado});
-            })
-            .catch(err => console.log(err));
+    Router(app);
+    // app.get('/',function(req,res){
+    //     res.render('index', {title:'Hey',message: 'Hello there'})
+    // });
+    app.get('/', function(req, res) {
+        res.render('login.ejs');
     });
+
     return app;
 };
