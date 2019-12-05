@@ -18,7 +18,7 @@ module.exports = function(app){
     // app.get("/api/disciplina", disciplina.showForm);
     // app.get("/api/disciplina/todos", disciplina.listaDisciplina);
     // app.get("/api/disciplina/:id", disciplina.obterDisciplina);
-    app.post("/api/disciplina", disciplina.inserirDisciplina);
+    app.post("/api/disciplina", user.salvarDisciplina);
     // app.put("/api/disciplina/:id", disciplina.atualizarDisciplina);
     // app.delete("/api/disciplina/:id", disciplina.removerDisciplina);
 

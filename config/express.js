@@ -9,7 +9,7 @@ const path = require('path')
 
 module.exports = function() {
     var app = express();
-    app.set("port", 3000);
+    app.set("port", 3001);
     app.set("views", "views");
     app.set("view engine", "ejs");
     app.use(bodyParser.json());       

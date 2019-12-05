@@ -17,8 +17,13 @@ const UserSchema = new Schema(
         telefone : Number,
         operadora : String,
         disciplinas : {
-            type: [Schema.Types.ObjectId],
-            ref: 'Disciplina'
+            nome:String,
+            conteudos:[]
+            //     {
+            //         nome:String,
+            //         dificuldade: Number
+            //     }
+            // ]
         },
         horarios: {
             segunda: Number,

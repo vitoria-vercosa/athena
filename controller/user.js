@@ -70,13 +70,10 @@ module.exports = {
         res.render('cadastroUser1.ejs')
     },
     async salvarDisciplina(req,res){
-        const {} = req.body;
-        
-        var disciplina = [{
-            "nome" : req.body.nomeDisci
-        }]
+        //const {} = req.body;
+        var nick = req.query.nick;
 
-        var conteudo = [
+        var conteudos = [
             {
                 nome : req.body.nomeCont1,
                 dificuldade : req.body.dific1
@@ -88,8 +85,40 @@ module.exports = {
             {
                 nome : req.body.nomeCont3,
                 dificuldade: req.body.dific3
+            }];
+        
+        var disciplinas = [{
+            "nome" : req.body.nomeDisci,
+            "conteudos" : conteudos
             }
         ]
+    
+
+        var user = await User.find({nick});
+
+        User.findByIdAndUpdate(user._id, {
+            $set: {
+            nome : user.nome,
+            nickname : user.nickname,
+            dataNasc: user.dataNasc,
+            email: user.email,
+            DDD: user.DDD,
+            telefone: user.telefone,
+            operadora:user.operadora,
+            horarios: user.horarios,
+            disciplinas: {
+                nome: req.body.nomeDisci,
+                conteudos : conteudos
+            } 
+            }
+        }, { new: true })
+            .then(old_user => {
+                res.send(old_user)
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(404).send("Usuário não encontrado atualizar user");
+            });
 
     },
     async salvarCadastro(req, res) {
@@ -106,10 +135,10 @@ module.exports = {
         }
         var disciplinas = []
         if(await !User.find({ nickname })){
-            res.send('<h2> Ja existe um aluno com esse nickname'
+            res.send('<h2> Ja existe um usuario com esse nickname'
                     +'<p><a href="/api/user/cadastroUser">voltar para o cadastro</a></p>');
             
-                    return "ja tem essa matricula"
+                    return "ja tem esse nick"
         }
         const aluno = await User.create({
             nome,

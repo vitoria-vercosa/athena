@@ -69,7 +69,7 @@
 
             <div class="card-body container">
                 <!--<form id="form_aluno"  onsubmit="event.preventDefault(); adicionarAluno();">-->  
-                <form id="form_aluno" action="/api/disciplina" method="POST">
+                <form id="form_aluno" action="/api/disciplina?nick=<?=dados.nick?>" method="POST">
 
                     <div class="form-row" ><!--<div class="form-row row " > -->
                         <div class="form-group col-md-12">
