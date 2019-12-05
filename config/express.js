@@ -21,7 +21,7 @@ module.exports = function() {
     //     res.render('index', {title:'Hey',message: 'Hello there'})
     // });
     app.get('/', function(req, res) {
-        res.render('login.ejs');
+        res.render('cadastroUser1.ejs');
     });
 
     return app;
