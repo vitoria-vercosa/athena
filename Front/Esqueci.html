@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Athena - Cadastro Disciplinas</title>
+	<title>Athena - Esqueci minha senha</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -26,39 +26,40 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/CadastroCSS.css">
 <!--===============================================================================================-->
+	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
+	<header>
+      <a href="Login.html" class="logo" data-scroll> <img src="images/Athena.png" height="42" width="42"> </a>
+      <nav class="nav-collapse">
+        <ul>
+          <li class="menu-item active"><a href="Login.html" data-scroll>Login</a></li>
+        </ul>
+      </nav>
+    </header>
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 			<form class="contact100-form validate-form">
 				<span class="contact100-form-title">
-					Disciplinas
+					Esqueci minha senha
 				</span>
 				<div id="disciplina">
-					<label class="label-input100" for="name">Informe o nome da disciplina</label>
-					<div class="wrap-input100 validate-input" data-validate = "Digite o nome da disciplina">
-						<input id="disciplina" class="input100" type="text" name="disciplina" placeholder="Disciplina">
+					<label class="label-input100" for="email">Informe o email cadastrado</label>
+					<div class="wrap-input100 validate-input" data-validate = "Email válido e obrigatório: ex@abc.xyz">
+						<input id="email" class="input100" type="text" name="email" placeholder="Ex.: example@email.com">
 						<span class="focus-input100"></span>
 					</div>
-					<label class="label-input100" for="name">Informe o nome do conteúdo desta disciplina</label>
-					<div class="wrap-input100 validate-input" data-validate = "Digite o nome do conteúdo">
-						<input id="conteudo" class="input100" type="text" name="conteudo" placeholder="Conteúdo">
-						<span class="focus-input100"></span>
-					</div>
-					<div id="imendaHTMLconteudo"></div>
-					<a href="#" id="btnAdicionaConteudo" ><i class="fa fa-plus"></i> Adicionar mais um conteúdo</a>
 				</div>
 
 				<div class="container-contact100-form-btn">
 					<button class="contact100-form-btn">
-						PRÓXIMO
+						ENVIAR
 					</button>
 				</div>
 			</form>
 
-			<div class="contact100-more flex-col-c-m" style="background-image: url('images/livros.jpg');">
+			<div class="contact100-more flex-col-c-m" style="background-image: url('images/esqueci.jpg');">
 			</div>
 		</div>
 	</div>
@@ -91,6 +92,12 @@
 	<script src="js/main.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+
+	<script src="js/fastclick.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/fixed-responsive-nav.js"></script>
+
+    
 	<script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}

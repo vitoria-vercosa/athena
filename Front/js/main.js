@@ -14,9 +14,29 @@ function exclui(id){
         adicionaCampo(tipoCampo);
     });
 
+
+    $("#btnAdicionaDisciplina").click(function(e){
+        e.preventDefault();
+        var tipoCampo = "disciplina";
+        AdicionaDisciplina(tipoCampo);
+    });
+
+    function AdicionaDisciplina(tipo){
+        idContador++;
+        var idCampo = "disciplina"+idContador;
+        var idForm = "formExtra"+idContador;
+        var html = "";
+        html += "<label class='label-input100' for='name'>Informe o nome da disciplina</label><div class='wrap-input100 validate-input' data-validate = 'Digite o nome da disciplina'>"
+        html += "<input id='disciplina' class='input100 contact100-form validate-form' type='text' name='disciplina' placeholder='Disciplina'><span class='focus-input100'></span></div>"
+        html += "<label class='label-input100' for='name'>Informe o nome do conteúdo desta disciplina</label><div class='wrap-input100 validate-input' data-validate = 'Digite o nome do conteúdo'>"
+        html += "<input id='conteudo' class='input100 contact100-form validate-form' type='text' name='conteudo' placeholder='Conteúdo'><span class='focus-input100'></span>"
+        html += "</div><div id='imendaHTMLconteudo'></div><a href='#' id='btnAdicionaConteudo' ><i class='fa fa-plus'></i> Adicionar mais um conteúdo</a>"
+        $("#imendaHTML"+tipo).append(html);
+    }
+
     function adicionaCampo(tipo){
         idContador++;
-        var idCampo = "campoExtra"+idContador;
+        var idCampo = "conteudo"+idContador;
         var idForm = "formExtra"+idContador;
         var html = "";
         html += "<div class='wrap-input100 validate-input input-group' id='"+idForm+"'> <input id='"+idCampo+"' class='input100' type='text' name='conteudo' placeholder='Conteúdo'>";

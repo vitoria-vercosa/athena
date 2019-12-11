@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Athena - Estudo</title>
+	<title>Athena - Perfil</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -46,28 +46,81 @@
 		<div class="wrap-contact100">
 			<form class="contact100-form validate-form">
 				<span class="contact100-form-title">
-					Hora de Estudar!
+					PERFIL
 				</span>
 
-				<!--label class="label-input100" for="name"><span id="hora">00h&nbsp&nbsp&nbsp&nbsp</span><span id="minuto">00m&nbsp&nbsp&nbsp&nbsp</span><span id="segundo">00s</span><br></label-->
-				<div class="wrap-input100 h1-wrap-input100 validate-input">
-					<input id="hora" readonly class="input100" type="text" name="hora" value="00h">
+				<label class="label-input100" for="name">Nome</label>
+				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Digite seu nome">
+					<input id="first-name" class="input100" type="text" name="first-name" placeholder="Nome" value="Fernando">
+					<span class="focus-input100"></span>
 				</div>
-				<div class="wrap-input100 h2-wrap-input100 validate-input">
-					<input id="minuto" readonly class="input100" type="text" name="minuto" value="00m">
-				</div>
-				<div class="wrap-input100 h3-wrap-input100 validate-input">
-					<input id="segundo" readonly class="input100" type="text" name="segundo" value="00s">
+				<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Digite seu sobrenome">
+					<input id="second-name" class="input100" type="text" name="last-name" placeholder="Sobrenome" value="Trinta">
+					<span class="focus-input100"></span>
 				</div>
 
-				<div class="container-contact100-form-btn" id="comeca">
-					<button class="contact100-form-btn" onclick="tempo(1)">
-						COMEÇAR
+				<label class="label-input100" for="user">Usuário</label>
+				<div class="wrap-input100 validate-input" data-validate = "Digite seu usuário">
+					<input id="usuario" class="input100" type="text" name="text" placeholder="Usuário" value="fern30">
+					<span class="focus-input100"></span>
+				</div>
+
+				<label class="label-input100" for="email">Email</label>
+				<div class="wrap-input100 validate-input" data-validate = "Email válido e obrigatório: ex@abc.xyz">
+					<input id="email" class="input100" type="text" name="email" placeholder="Ex.: example@email.com" value="fern30@gmail.com">
+					<span class="focus-input100"></span>
+				</div>
+
+				<label class="label-input100" for="password">Senha</label>
+				<div class="wrap-input100 validate-input" data-validate = "Digite sua senha">
+					<input id="password" class="input100" type="password" name="pass" placeholder="Senha" value="oi">
+					<span class="focus-input100"></span>
+				</div>
+
+				<label class="label-input100" for="date">Data de Nascimento</label>
+				<div class="wrap-input100 validate-input" data-validate = "Informe sua data de nascimento">
+					<input type="date" class="input100" id="date" value="1930-12-30">
+					<span class="focus-input100"></span>
+				</div>
+
+				<label class="label-input100" for="hours">Informe a quantidade de horas livres para estudo por dia</label>
+				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Informe o tempo de segunda">
+					<input type="number" class="input100" min="0" max="10" placeholder="Segunda" id="segunda" value="1">
+					<span class="focus-input100"></span>
+				</div>
+				<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Informe o tempo de terça">
+					<input type="number" class="input100" min="0" max="10" placeholder="Terça" id="terca" value="1">
+					<span class="focus-input100"></span>
+				</div>
+				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Informe o tempo de quarta">
+					<input type="number" class="input100" min="0" max="10" placeholder="Quarta" id="quarta" value="1">
+					<span class="focus-input100"></span>
+				</div>
+				<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Informe o tempo de quinta">
+					<input type="number" class="input100" min="0" max="10" placeholder="Quinta" id="quinta" value="1">
+					<span class="focus-input100"></span>
+				</div>
+				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Informe o tempo de sexta">
+					<input type="number" class="input100" min="0" max="10" placeholder="Sexta" id="sexta" value="1">
+					<span class="focus-input100"></span>
+				</div>
+				<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Informe o tempo de sábado">
+					<input type="number" class="input100" min="0" max="10" placeholder="Sábado" id="sabado" value="1">
+					<span class="focus-input100"></span>
+				</div>
+				<div class="wrap-input100 validate-input" data-validate = "Informe o tempo de domingo">
+					<input type="number" class="input100" min="0" max="10" placeholder="Domingo" id="domingo" value="1">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn"  onclick="mostra()">
+						SALVAR
 					</button>
 				</div>
 			</form>
 
-			<div class="contact100-more flex-col-c-m" style="background-image: url('images/estudo.jpg');">
+			<div class="contact100-more flex-col-c-m" style="background-image: url('images/livros.jpg');">
 			</div>
 		</div>
 	</div>
@@ -75,7 +128,7 @@
 
 
 	<div id="dropDownSelect1"></div>
-	<script src="js/crono.js"></script>
+
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
@@ -104,7 +157,6 @@
 	<script src="js/fastclick.js"></script>
     <script src="js/scroll.js"></script>
     <script src="js/fixed-responsive-nav.js"></script>
-
 	<script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}

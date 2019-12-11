@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Athena - Cadastro Disciplinas</title>
+	<title>Athena - Disciplinas</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -26,9 +26,21 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/CadastroCSS.css">
 <!--===============================================================================================-->
+	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
+	<header>
+      <a href="Home.html" class="logo" data-scroll> <img src="images/Athena.png" height="42" width="42"> </a>
+      <nav class="nav-collapse">
+        <ul>
+          <li class="menu-item active"><a href="Home.html" data-scroll>Home</a></li>
+          <li class="menu-item active"><a href="Desempenho.html" data-scroll>Desempenho</a></li>
+          <li class="menu-item active"><a href="Perfil.html" data-scroll>Perfil</a></li>
+          <li class="menu-item active"><a href="Disciplinas.html" data-scroll>Disciplinas</a></li>
+          <li class="menu-item active"><a href="Login.html" data-scroll>Sair</a></li>
+        </ul>
+      </nav>
+    </header>
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
@@ -37,23 +49,33 @@
 					Disciplinas
 				</span>
 				<div id="disciplina">
-					<label class="label-input100" for="name">Informe o nome da disciplina</label>
+					<label class="label-input100" for="name">Nome da disciplina</label>
 					<div class="wrap-input100 validate-input" data-validate = "Digite o nome da disciplina">
-						<input id="disciplina" class="input100" type="text" name="disciplina" placeholder="Disciplina">
+						<input id="usuario" class="input100" type="text" name="disciplina" placeholder="Disciplina" value="CG">
 						<span class="focus-input100"></span>
 					</div>
-					<label class="label-input100" for="name">Informe o nome do conteúdo desta disciplina</label>
+					<label class="label-input100" for="name">Nome dos conteúdos desta disciplina</label>
 					<div class="wrap-input100 validate-input" data-validate = "Digite o nome do conteúdo">
-						<input id="conteudo" class="input100" type="text" name="conteudo" placeholder="Conteúdo">
+						<input id="usuario" class="input100" type="text" name="conteudo1" placeholder="Conteúdo" value="Transformações">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100">
+						<input id="usuario" class="input100" type="text" name="conteudo2" placeholder="Conteúdo" value="Iluminação">
 						<span class="focus-input100"></span>
 					</div>
 					<div id="imendaHTMLconteudo"></div>
 					<a href="#" id="btnAdicionaConteudo" ><i class="fa fa-plus"></i> Adicionar mais um conteúdo</a>
 				</div>
+				<div id="imendaHTMLdisciplina"></div>
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn" id="btnAdicionaDisciplina">
+						ADICIONAR DISCIPLINA
+					</button>
+				</div>
 
 				<div class="container-contact100-form-btn">
 					<button class="contact100-form-btn">
-						PRÓXIMO
+						SALVAR
 					</button>
 				</div>
 			</form>
@@ -91,6 +113,10 @@
 	<script src="js/main.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+
+	<script src="js/fastclick.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/fixed-responsive-nav.js"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}

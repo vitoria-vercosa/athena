@@ -20,9 +20,22 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/HomeCSS.css">
 <!--===============================================================================================-->
+	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-	
+	<header>
+      <a href="Home.html" class="logo" data-scroll> <img src="images/Athena.png" height="42" width="42"> </a>
+      <nav class="nav-collapse">
+        <ul>
+          <li class="menu-item active"><a href="Home.html" data-scroll>Home</a></li>
+          <li class="menu-item active"><a href="Desempenho.html" data-scroll>Desempenho</a></li>
+          <li class="menu-item active"><a href="Perfil.html" data-scroll>Perfil</a></li>
+          <li class="menu-item active"><a href="Disciplinas.html" data-scroll>Disciplinas</a></li>
+          <li class="menu-item active"><a href="Login.html" data-scroll>Sair</a></li>
+        </ul>
+      </nav>
+    </header>
+
 	<div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -30,24 +43,32 @@
 					<table data-vertable="ver1">
 						<thead>
 							<tr class="row100 head">
-								<th class="column100 column1" data-column="column1">Domingo</th>
-								<th class="column100 column2" data-column="column2">Segunda</th>
-								<th class="column100 column3" data-column="column3">Terça</th>
-								<th class="column100 column4" data-column="column4">Quarta</th>
-								<th class="column100 column5" data-column="column5">Quinta</th>
-								<th class="column100 column6" data-column="column6">Sexta</th>
-								<th class="column100 column7" data-column="column7">Sábado</th>
+								<th class="column100 column1" data-column="column1">Disciplina</th>
+								<th class="column100 column2" data-column="column2">Conteúdo</th>
+								<th class="column100 column3" data-column="column3">Horas Estudadas</th>
+								<th class="column100 column4" data-column="column4">Após 01 dia</th>
+								<th class="column100 column5" data-column="column5">Após 07 dias</th>
+								<th class="column100 column6" data-column="column6">Após 15 dias</th>
+								<th class="column100 column7" data-column="column7">Após 30 dias</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr class="row100">
-								<td class="column100 column1" data-column="column1"><a>Disc. 01</a></td>
-								<td class="column100 column2" data-column="column2"><a>Disc. 01</a></td>
-								<td class="column100 column3" data-column="column3"><a>Disc. 01</a></td>
-								<td class="column100 column4" data-column="column4"><a>Disc. 01</a></td>
-								<td class="column100 column5" data-column="column5"><a>Disc. 01</a></td>
-								<td class="column100 column6" data-column="column6"><a>Disc. 01</a></td>
-								<td class="column100 column7" data-column="column7"><a>Disc. 01</a></td>
+								<td class="column100 column1" rowspan="2" data-column="column1">CG</td>
+								<td class="column100 column2" data-column="column2"><a>Transformações</a></td>
+								<td class="column100 column3" data-column="column3"><a>00:01:10</a></td>
+								<td class="column100 column4" data-column="column4"><a>11/01/2011</a></td>
+								<td class="column100 column5" data-column="column5"><a>18/01/2011</a></td>
+								<td class="column100 column6" data-column="column6"><a>26/01/2011</a></td>
+								<td class="column100 column7" data-column="column7"><a>11/02/2011</a></td>
+							</tr>
+							<tr class="row100">
+								<td class="column100 column2" data-column="column2"><a>Transformações</a></td>
+								<td class="column100 column3" data-column="column3"><a>00:01:10</a></td>
+								<td class="column100 column4" data-column="column4"><a>11/01/2011</a></td>
+								<td class="column100 column5" data-column="column5"><a>18/01/2011</a></td>
+								<td class="column100 column6" data-column="column6"><a>26/01/2011</a></td>
+								<td class="column100 column7" data-column="column7"><a>11/02/2011</a></td>
 							</tr>
 						</tbody>
 					</table>
@@ -68,6 +89,10 @@
 	<script src="vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+
+	<script src="js/fastclick.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/fixed-responsive-nav.js"></script>
 
 </body>
 </html>
