@@ -188,7 +188,7 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: #87CEFA;
+  background: #d1d1d1;
   
 }
 
@@ -271,6 +271,12 @@ iframe {
 .rs1-wrap-input100,
 .rs2-wrap-input100 {
   width: 50%;
+}
+
+.h1-wrap-input100,
+.h2-wrap-input100,
+.h3-wrap-input100 {
+  width: 33%;
 }
 
 .rs2-wrap-input100 {
