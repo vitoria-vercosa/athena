@@ -1,12 +1,12 @@
 var intervalo;
 
-function tempo(op) {
+function tempo(op,hr,min,seg) {
 	if (op == 1) {
-		document.getElementById('comeca').innerHTML = "<button class='contact100-form-btn' onclick='parar()'> PARAR </button>";
+		document.getElementById('comeca').innerHTML = "<button class='contact100-form-btn' onclick='pause()'> PAUSAR </button><button class='contact100-form-btn' onclick='parar()'> PARAR </button>";
 	}
-	var s = 1;
-	var m = 0;
-	var h = 0;
+	var s = parseInt(seg);
+	var m = parseInt(min);
+	var h = parseInt(hr);
 	intervalo = window.setInterval(function() {
 		if (s == 60) { m++; s = 0; }
 		if (m == 60) { h++; s = 0; m = 0; }
@@ -19,8 +19,19 @@ function tempo(op) {
 
 function parar() {
 	window.clearInterval(intervalo);
-	//document.getElementById('parar').style.display = "none";
-	//document.getElementById('comeca').style.display = "block";
+}
+
+function pause() {
+	document.getElementById('comeca').innerHTML = "<button class='contact100-form-btn' onclick='recomecar()'> CONTINUAR </button><button class='contact100-form-btn' onclick='parar()'> PARAR </button>";
+}
+
+function recomecar(){
+	var hr = document.getElementById('hora').value
+	var min = document.getElementById('minuto').value
+	var seg = document.getElementById('segundo').value
+
+	document.getElementById('comeca').innerHTML = "<button class='contact100-form-btn' onclick='pause()'> PAUSAR </button><button class='contact100-form-btn' onclick='parar()'> PARAR </button>";
+	tempo(0,hr,min,seg);
 }
 
 //window.onload=tempo;

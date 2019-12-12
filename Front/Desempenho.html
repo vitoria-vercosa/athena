@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Athena - Desempenho</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/owl.ico"/>
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/CadastroCSS.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+      <a href="Home.html" class="logo" data-scroll> <img src="images/Athena.png" height="42" width="42"> </a>
+      <nav class="nav-collapse">
+        <ul>
+          <li class="menu-item active"><a href="Home.html" data-scroll>Home</a></li>
+          <li class="menu-item active"><a href="Desempenho.html" data-scroll>Desempenho</a></li>
+          <li class="menu-item active"><a href="Perfil.html" data-scroll>Perfil</a></li>
+          <li class="menu-item active"><a href="Disciplinas.html" data-scroll>Disciplinas</a></li>
+          <li class="menu-item active"><a href="Login.html" data-scroll>Sair</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container-contact100">
+        <div class="wrap-contact100 contact100-form">
+            <canvas id="myChart" width="200" height="200"></canvas>
+            <script src='js/Chart.min.js'></script>
+            <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['CG', 'Redes', 'Web', 'Cana', 'FuP', 'SGBD'],
+                    datasets: [{
+                        label: 'Nº de Horas Estudadas',
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+            </script>
+        </div>
+    </div>
+</body>
+</html>
