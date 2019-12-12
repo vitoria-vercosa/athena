@@ -34,6 +34,7 @@
       <nav class="nav-collapse">
         <ul>
           <li class="menu-item active"><a href="Home.html" data-scroll>Home</a></li>
+          <li class="menu-item active"><a href="Estudo.html" data-scroll>Estudo</a></li>
           <li class="menu-item active"><a href="Desempenho.html" data-scroll>Desempenho</a></li>
           <li class="menu-item active"><a href="Perfil.html" data-scroll>Perfil</a></li>
           <li class="menu-item active"><a href="Disciplinas.html" data-scroll>Disciplinas</a></li>
@@ -50,6 +51,31 @@
 				</span>
 
 				<!--label class="label-input100" for="name"><span id="hora">00h&nbsp&nbsp&nbsp&nbsp</span><span id="minuto">00m&nbsp&nbsp&nbsp&nbsp</span><span id="segundo">00s</span><br></label-->
+				<label class="label-input100" for="name">Informe o que será realizado</label>
+				<div class="wrap-input100">
+					<select class="form-control input100" id="atividade">
+				      <option class="input100" value="estudo">Estudo</option>
+				      <option class="input100" value="revisao">Revisão</option>
+				    </select>
+				</div>
+
+				<label class="label-input100" for="name">Informe a disciplina</label>
+				<div class="wrap-input100">
+					<select class="form-control input100" id="disciplia">
+				      <option class="input100" value="cg">CG</option>
+				      <option class="input100" value="web">Web</option>
+				    </select>
+				</div>
+
+				<label class="label-input100" for="name">Informe o conteúdo</label>
+				<div class="wrap-input100">
+					<select class="form-control input100" id="conteudo">
+				      <option class="input100" value="transformacao">Transformação</option>
+				      <option class="input100" value="iluminacao">Iluminação</option>
+				    </select>
+				</div>
+
+				<label class="label-input100" for="name">Tempo de Estudo</label>
 				<div class="wrap-input100 h1-wrap-input100 validate-input">
 					<input id="hora" readonly class="input100" type="text" name="hora" value="00h">
 				</div>
@@ -71,8 +97,6 @@
 			</div>
 		</div>
 	</div>
-
-
 
 	<div id="dropDownSelect1"></div>
 	<script src="js/crono.js"></script>
